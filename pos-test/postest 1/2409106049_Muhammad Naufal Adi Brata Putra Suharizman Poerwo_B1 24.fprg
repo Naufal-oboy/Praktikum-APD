@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="tugas apd 1"/>
+        <attribute name="authors" value="USER"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-09-11 08:11:08 PM"/>
+        <attribute name="created" value="VVNFUjtERVNLVE9QLTMwMDVUUzc7MjAyNC0wOS0wODswMzoxMzowOSBQTTsyNjA5"/>
+        <attribute name="edited" value="VVNFUjtERVNLVE9QLTMwMDVUUzc7MjAyNC0wOS0xMTswODoxMTowOCBQTTs0OzI3MTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="belanja, diskon, bayar" type="Integer" array="False" size=""/>
+            <input variable="belanja"/>
+            <if expression="belanja &gt;= 1000000">
+                <then>
+                    <assign variable="diskon" expression="belanja * 20/100"/>
+                </then>
+                <else>
+                    <if expression="belanja &gt;= 500000  and belanja &lt; 1000000">
+                        <then>
+                            <assign variable="diskon" expression="belanja * 10/100"/>
+                        </then>
+                        <else>
+                            <if expression="belanja &gt;= 100000 and belanja &lt; 500000">
+                                <then>
+                                    <assign variable="diskon" expression="belanja * 5/100"/>
+                                </then>
+                                <else>
+                                    <assign variable="diskon" expression="0"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="bayar" expression="belanja - diskon"/>
+            <output expression="&quot;total belanja yang harus dibayar menjadi&quot; &amp;bayar" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
